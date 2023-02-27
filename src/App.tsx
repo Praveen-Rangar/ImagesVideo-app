@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import ShowImageList from "./Components/Images/ShowImageList";
+import ShowVideoList from "./Components/Videos/ShowVideoList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full min-h-screen bg-gradient-to-r from-violet-500 to-fuchsia-500">
+      <Routes>
+        <Route index element={<ShowImageList />}></Route>
+        <Route path="/ShowVideoList" element={<ShowVideoList />}></Route>
+        <Route path="/" element={<ShowVideoList />}></Route>
+      </Routes>
     </div>
   );
 }
